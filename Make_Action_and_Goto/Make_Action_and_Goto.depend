@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1463921676 source:d:\program files (x86)\codeblocks\code\make_action_and_goto\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+

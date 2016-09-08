@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1464595898 source:d:\program files (x86)\codeblocks\code\fcompiler\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+

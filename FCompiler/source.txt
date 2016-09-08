@@ -1,0 +1,93 @@
+program testall;
+	const
+		con1 = 'horray';
+		con2 = 3.1415926535898;
+		con3 = 4;
+	var
+		va1,va8,va9 : integer;
+		va2 : char;
+		va3 : array[0 .. 3, 0 .. 5] of integer;
+		va4 : real;
+		va6 : ^integer;
+		va7 : array[0 .. 10] of char;
+	procedure test1;
+		var
+			va1,va2,sum:integer;
+		procedure test2(x1:integer);
+			var
+				tmp:integer;
+			function test3:integer;
+				var 
+					i,j: integer;
+				begin
+					case x1 mod 3 of
+						0: 
+							begin
+								i := 0;
+								j := x1 / 3;
+							end;
+						1: i := 1;
+						2: i := 2;
+					end;
+				end;
+			begin
+				tmp := x1;
+				while tmp >= 0 do
+					begin
+						tmp := tmp - 1;
+						x1 := x1 + tmp;
+					end;
+				if x1 > 0 and x1 < 100 then
+					if x1 > 50 then x1 := 50;
+			end;
+		begin
+			sum := 0;
+			for va1 := 0 to 3 do
+				for va2 := 5 downto 0 do
+					begin
+						va3[va1,va2] := va1 + va1 * va2;
+						sum := sum + va3[va1,va2];
+					end;
+			va1 := - (va1 - va2);
+			va2 := va2 * (va1 - va2);
+			if va1 < 0 then va1 := 0
+			else 
+				if va1 > 3 then 
+					begin
+						va1 := 3;
+						va2 := va2 div 3;
+					end;
+			test2(va3[va1,va2]);
+		end;
+	procedure test4(x1,x2:integer;var y1:integer);
+		begin
+			if x1 > 0 and x1 < 5 or x2 >0 and x2 < 5 then
+				y1:= 2
+			else
+				if x1 <> x2 then y1 := 1
+				else y1:= 0;
+		end;
+	begin
+		read(va1);
+		read(va7);
+		va6^ := va1;
+		if va1 >= con3 then
+			if va1 > con3 then
+				va8 := va6^ - con3
+			else
+				va8 := va6^ + con3
+		else
+			va8 := 0;
+		test4(va1,va8,va9);
+		test1();
+		test5();
+		va11 := 11;
+		va1 := 0;
+		repeat
+			if not va3[va1,va2] mod 2 = 0 then
+				if va1 > va2 then write(con1) 
+				else write(va7);
+			va1 := va1 + 1;
+			va9 := va9 + 1;
+		until va1 > 3 or va9 > 5;
+	end.
